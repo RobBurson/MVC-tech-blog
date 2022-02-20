@@ -12,7 +12,7 @@ Comment.init(
             primaryKey: true,
             autoIncrement: true
         },
-        comment_text: {
+        commentText: {
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
@@ -21,7 +21,7 @@ Comment.init(
             }
         },
         // need references to other associated tables
-        user_id: {
+        userId: {
             type: DataTypes.INTEGER,
             allowNull: false,
             references: {
@@ -29,7 +29,7 @@ Comment.init(
               key: 'id'
             }
           },
-          post_id: {
+          postId: {
             type: DataTypes.INTEGER,
             allowNull: false,
             references: {

@@ -4,8 +4,8 @@ module.exports = {
         date
       ).getFullYear()}`;
     },
-    shorten_string: post_text => {
-      const newString = post_text.substring(0, 199)
+    shorten_string: postText => {
+      const newString = postText.substring(0, 199)
       return `${newString}...`;
     }
   }

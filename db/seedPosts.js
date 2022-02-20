@@ -8,23 +8,23 @@ const { User } = require('../models');
 const postData = [
   {
     title: 'Gandalf',
-    post_text: 'Fool of a Took! Throw yourself in next time and rid us of your stupidity!',
-    user_id: 1
+    postText: 'Fool of a Took! Throw yourself in next time and rid us of your stupidity!',
+    userId: 1
   },
   {
     title: 'Gollum',
-    post_text: 'The Precious! We wants it!',
-    user_id: 1
+    postText: 'The Precious! We wants it!',
+    userId: 1
   },
   {
     title: 'Aragorn',
-    post_text: 'The Beacons of Minas Tirith! The Beacons are lit! Gondor calls for aid! ',
-    user_id: 2
+    postText: 'The Beacons of Minas Tirith! The Beacons are lit! Gondor calls for aid! ',
+    userId: 2
   },
   {
       title: 'Theoden',
-      post_text: 'And Rohan will answer. Muster the Rohirrim!',
-      user_id: 2
+      postText: 'And Rohan will answer. Muster the Rohirrim!',
+      userId: 2
   }
 ];
 

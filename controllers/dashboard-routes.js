@@ -10,14 +10,14 @@ router.get('/', withAuth, (req, res) => { // add withAuth here as our own middle
     Post.findAll({
         where: {
           // use the ID from the session so we retrieve posts made by logged in user
-          user_id: req.session.user_id
+          userId: req.session.userId
           
         },
         attributes: [
           'id',
-          'post_text',
+          'postText',
           'title',
-          'created_at'
+          'createdAt'
         ],
         include: [
           {
@@ -38,7 +38,7 @@ router.get('/', withAuth, (req, res) => { // add withAuth here as our own middle
           console.log(err);
           res.status(500).json(err);
         });
-        console.log(req.session.user_id);
+        console.log(req.session.userId);
   });
 
 router.get('/edit/:id', withAuth, (req, res) => { // add withAuth here as our own middleware
@@ -48,14 +48,14 @@ router.get('/edit/:id', withAuth, (req, res) => { // add withAuth here as our ow
     },
     attributes: [
         'id', 
-        'post_text', 
+        'postText', 
         'title', 
-        'created_at'
+        'createdAt'
       ],
     include: [
         {
             model: Comment,
-            attributes: ['id', 'comment_text', 'user_id', 'created_at'],
+            attributes: ['id', 'commentText', 'userId', 'createdAt'],
             // also include the User model itself so it can attach the username to the comment
             include: {
                 model: User,

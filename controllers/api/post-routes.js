@@ -9,13 +9,13 @@ router.get('/', (req, res) => {
         attributes: [
             'id', 
             'title', 
-            'post_text',
-            'created_at'],
-        order: [['created_at', 'DESC']], // sort by most recent
+            'postText',
+            'createdAt'],
+        order: [['createdAt', 'DESC']], // sort by most recent
         include: [ // Call on Sequelize's include option to perform the join
             {
                 model: Comment,
-                attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+                attributes: ['id', 'commentText', 'postId', 'userId', 'createdAt'],
                 // include User model to couple username with comment
                 include: {
                     model: User,
@@ -41,11 +41,11 @@ router.get('/:id', (req, res) => {
         where: {
           id: req.params.id
         },
-        attributes: ['id', 'post_text', 'title', 'created_at'],
+        attributes: ['id', 'postText', 'title', 'createdAt'],
         include: [
             {
                 model: Comment,
-                attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+                attributes: ['id', 'commentText', 'postId', 'userId', 'createdAt'],
                 include: {
                     model: User,
                     attributes: ['username']
@@ -74,8 +74,8 @@ router.get('/:id', (req, res) => {
 router.post('/', (req, res) => {
     Post.create({
         title: req.body.title,
-        post_text: req.body.post_text,
-        user_id: req.session.user_id
+        postText: req.body.postText,
+        userId: req.session.userId
     })
     .then(dbPostData => res.json(dbPostData))
     .catch(err => {
@@ -90,7 +90,7 @@ router.put('/:id', (req, res) => {
     Post.update(
         {
             title: req.body.title,
-            post_text: req.body.post_text
+            postText: req.body.postText
         },
         {
             where: {

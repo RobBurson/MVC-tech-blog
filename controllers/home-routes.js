@@ -9,10 +9,10 @@ router.get('/', (req, res) => {
         attributes: [
           'id',
           'title',
-          'post_text',
-          'created_at'
+          'postText',
+          'createdAt'
         ],
-        order: [['created_at', 'DESC']],
+        order: [['createdAt', 'DESC']],
         include: [
           {
             model: User,
@@ -38,11 +38,11 @@ router.get('/', (req, res) => {
           attributes: [
             'id',
             'title',
-            'post_text',
-            'created_at',
-            'user_id'
+            'postText',
+            'createdAt',
+            'userId'
           ],
-          order: [['user_id']],
+          order: [['userId']],
           include: [
             {
               model: User,
@@ -74,11 +74,11 @@ router.get('/', (req, res) => {
       where: {
         id: req.params.id
       },
-      attributes: ['id', 'post_text', 'title', 'created_at'],
+      attributes: ['id', 'postText', 'title', 'createdAt'],
       include: [
           {
               model: Comment,
-              attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+              attributes: ['id', 'commentText', 'postId', 'userId', 'createdAt'],
               include: {
                   model: User,
                   attributes: ['username']
