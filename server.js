@@ -16,7 +16,6 @@ const exHb = require('express-handlebars');
 const handlebars = exHb.create({ helpers });
 
 const session = require('express-session');
-const { application } = require('express');
 
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
