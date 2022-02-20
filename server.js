@@ -29,7 +29,7 @@ const sesh = {
     })
 };
 
-app.use(session(sesh));
+app.use(session({secret: sesh}));
 
 app.use(express.static(path.join(__dirname, 'public'))); //link static files
 app.engine('handlebars', handlebars.engine);
