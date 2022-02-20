@@ -20,7 +20,7 @@ const session = require('express-session');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const sesh = {
-    secret: process.env.SS,
+    secret: `'${process.env.SS}'`,
     cookie: {},
     resave: false,
     saveUninitialized: true,
