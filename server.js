@@ -20,7 +20,7 @@ const session = require('express-session');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const sesh = {
-    secret: `'${process.env.SS}'`,
+    secret: 'potato',
     cookie: {},
     resave: false,
     saveUninitialized: true,
@@ -29,7 +29,7 @@ const sesh = {
     })
 };
 
-app.use(session({secret: sesh}));
+app.use(session(sesh));
 
 app.use(express.static(path.join(__dirname, 'public'))); //link static files
 app.engine('handlebars', handlebars.engine);
